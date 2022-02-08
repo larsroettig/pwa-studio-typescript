@@ -2,3 +2,4 @@
 dist/
 # Generated coverage pages
 coverage
+*.gql.generated.ts

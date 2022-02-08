@@ -1,0 +1,8 @@
+{
+    "name": "@types/magento__venia-ui",
+    "main": "",
+    "types": "index.d.ts",
+    "scripts": {},
+    "private": "true",
+    "version": "0.1.0"
+}

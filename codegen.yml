@@ -1,0 +1,25 @@
+overwrite: true
+schema: ${MAGENTO_BACKEND_URL:/graphql}
+documents: 'src/**/!(*.generated).gql.ts'
+
+generates:
+  ./src/graphqlTypes.ts:
+    plugins:
+      - typescript
+    config:
+      avoidOptionals: true
+      maybeValue: T | null
+      preResolveTypes: false
+  ./src/:
+    preset: near-operation-file
+    presetConfig:
+      extension: .generated.ts
+      baseTypesPath: graphqlTypes.ts
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
+      avoidOptionals: true
+      maybeValue: T | null
+      preResolveTypes: false

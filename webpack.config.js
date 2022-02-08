@@ -3,6 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const fs = require('fs');
 const { promisify } = require('util');
+const cssOverwriteMapping = require('./cssOverwriteMapping');
 
 const {
     getMediaURL,
@@ -128,7 +129,20 @@ module.exports = async env => {
         new HTMLWebpackPlugin(htmlWebpackConfig)
     ];
 
-    /* 
+    /*!!!!!!!! Custom loader pls migrated them if you UPDATE !!!!!!!!!!!*/
+    config.resolve.extensions.push('.ts', '.tsx');
+
+    config.module.rules.push({
+        test: /\.tsx?$/,
+        loader: 'babel-loader'
+    });
+
+    // overwrite css file for @composes
+    for (const key in cssOverwriteMapping) {
+        config.resolve.alias[key] = cssOverwriteMapping[key];
+    }
+
+    /*
     Commenting out this section until SSR is fully implemented
     */
     // const serverConfig = Object.assign({}, config, {

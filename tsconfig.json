@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "noEmit": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "jsx": "react",
+        "skipLibCheck": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "src/talons/**/*.generated.ts"]
+}

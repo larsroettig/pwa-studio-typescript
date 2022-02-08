@@ -14,3 +14,5 @@ test-report.xml
 test-results.json
 yarn-error.log
 template.generated.html
+__generated__
+graphqlTypes.ts

@@ -7,7 +7,7 @@
       ],
       "extensions": {
         "endpoints": {
-          "default": "${env:MAGENTO_BACKEND_URL}/graphql"
+          "default": "https://pwa_12_2.test/graphql"
         }
       }
     }
